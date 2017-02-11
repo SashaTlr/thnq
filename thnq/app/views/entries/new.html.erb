@@ -3,15 +3,19 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
-<header>Header</header>
+<header class="show-entry-page-title">thnq</header>
 
 <div class="body">
     <div class="title">
-        <h1>Entries #[1]</h1>
+        <h1>Entries #1</h1>
+        <hr>
         <div>
-	        <button id='icon'>Add Image</button>
-	        <button id='icon'>Submit</button>
+	          	<%= image_tag("edit", class: "images", id:"right-image")%>
+	          	<%= image_tag('share', class:"images") %>
+
         </div>
+        <div style="clear:both;"></div>
+
     </div>
 
     <div class="chat">
