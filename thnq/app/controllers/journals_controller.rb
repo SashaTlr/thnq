@@ -15,7 +15,8 @@ class JournalsController < ApplicationController
   end
 
   def show
-
+    @journal = Journal.find_by_id(params[:id])
+    @entries = @journal.entries
   end
 
   def update

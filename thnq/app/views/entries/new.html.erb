@@ -1,3 +1,13 @@
 <h1>Entries#new</h1>
 <p>Find me in app/views/entries/new.html.erb</p>
-<code>DOES THIS SHOW</code>
+<h1> <%= @random_question.text %> </h1>
+
+<%= form_for :entry, html: {class: "your form class"} do |f| %>
+  <p>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
