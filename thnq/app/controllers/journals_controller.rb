@@ -3,6 +3,7 @@ class JournalsController < ApplicationController
   end
 
   def create
+    render plain: params[:journal].inspect
   end
 
   def new
