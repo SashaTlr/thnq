@@ -1,5 +1,33 @@
 Rails.application.routes.draw do
 
+  get 'questions/index'
+
+  get 'questions/create'
+
+  get 'questions/new'
+
+  get 'questions/edit'
+
+  get 'questions/show'
+
+  get 'questions/update'
+
+  get 'questions/destroy'
+
+  get 'entries/index'
+
+  get 'entries/create'
+
+  get 'entries/new'
+
+  get 'entries/edit'
+
+  get 'entries/show'
+
+  get 'entries/update'
+
+  get 'entries/destroy'
+
   get 'journals/index'
 
   get 'journals/create'

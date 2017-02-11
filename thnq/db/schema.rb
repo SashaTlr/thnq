@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211161151) do
+ActiveRecord::Schema.define(version: 20170211162049) do
+
+  create_table "entries", force: :cascade do |t|
+    t.integer  "journal_id"
+    t.integer  "question_id"
+    t.string   "text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["journal_id"], name: "index_entries_on_journal_id"
+    t.index ["question_id"], name: "index_entries_on_question_id"
+  end
 
   create_table "journals", force: :cascade do |t|
     t.string   "subject_name"
@@ -19,6 +29,12 @@ ActiveRecord::Schema.define(version: 20170211161151) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_journals_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
