@@ -6,6 +6,7 @@ class EntriesController < ApplicationController
   end
 
   def new
+    @random_question = Question.all.sample
   end
 
   def edit

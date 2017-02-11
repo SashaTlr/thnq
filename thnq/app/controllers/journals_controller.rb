@@ -1,5 +1,6 @@
 class JournalsController < ApplicationController
   def index
+    @journals = Journal.all
   end
 
   def create
@@ -7,12 +8,14 @@ class JournalsController < ApplicationController
   end
 
   def new
+
   end
 
   def edit
   end
 
   def show
+
   end
 
   def update
