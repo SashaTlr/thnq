@@ -3,29 +3,35 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
-<header>Header</header>
+<header class="show-entry-page-title">thnq</header>
 
 <div class="body">
     <div class="title">
-        <h1>Entries #[1]</h1>
-        <button>Add Image</button>
-        <button>Submit</button>
+        <h1>Entries #1</h1>
+        <hr>
+        <div>
+	          	<%= image_tag("edit", class: "images", id:"right-image")%>
+	          	<%= image_tag('share', class:"images") %>
+
+        </div>
+        <div style="clear:both;"></div>
+
     </div>
 
     <div class="chat">
 
         <div class="chat-style chat-bot">
-            Hello, [username], welcome to thnq! Let's enter your first journal entry.
+            Hello, welcome to thnq! Let's enter your first journal entry.
         </div>
         <div class="chat-style chat-bot">
             <%= @random_question.text %>
         </div>
         <div class="chat-style chat-user">
             <div class="form">
-<%= form_for [@journal, @entry] do |f| %>
-                      <p>
+				<%= form_for [@journal, @entry] do |f| %>
+                      <p> 
                             <%= hidden_field_tag "entry[question_id]", @random_question.id %>
-    <%= f.text_field :text , class:'input-box'%>
+    						<%= f.text_field :text , class:'input-box'%>
                       </p>
 
                       <p>
@@ -43,5 +49,3 @@
 
     </div>
 </div>
-<script type="text/javascript" ></script>
-<!-- src='../../assets/javascripts/myscripts.js' -->
