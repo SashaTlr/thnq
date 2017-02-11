@@ -1,2 +1,5 @@
-<h1>Entries#show</h1>
-<p>Find me in app/views/entries/show.html.erb</p>
+ <p><%= @entry.updated_at %></p>
+
+ <p><%= Question.find_by_id(@entry.question_id).text %></p>
+ <p><%= @entry.text %></p>
+
