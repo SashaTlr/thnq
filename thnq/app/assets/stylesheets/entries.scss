@@ -31,9 +31,13 @@
 	margin-left: 200px;
 }
 
-#input-box {
+.input-box {
 	border-style: none;
-	width: 200px;
+	width: 250px;
 	min-height: 50px;
 	text-align: top;
+}
+
+#icon {
+	float: left;
 }
