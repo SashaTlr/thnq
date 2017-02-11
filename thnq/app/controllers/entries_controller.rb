@@ -5,9 +5,11 @@ class EntriesController < ApplicationController
 
   def create
     @journal = Journal.find_by_id(params[:journal_id])
-    @entry = Entry.new(params.require(:entry).permit(:text))
+    @entry = Entry.new(params.require(:entry).permit(:text, :question_id))
+    @random_question = Question.find_by_id(@entry.question_id)
+    @entry.journal_id = @journal.id
     if @entry.save
-      redirect_to @entry
+      redirect_to journal_entry_path(@journal, @entry)
     else
       render 'new'
     end
@@ -16,6 +18,7 @@ class EntriesController < ApplicationController
   def new
     @random_question = Question.all.sample
     @entry = Entry.new(:question_id => @random_question.id, :journal_id => params[:journal_id])
+    # binding.pry
     @journal = Journal.find_by_id(@entry.journal_id)
   end
 
