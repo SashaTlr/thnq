@@ -1,3 +1,39 @@
 // Place all the styles related to the Entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+ body {
+ 	margin: 0 auto;
+ 	font-family: 'Lato', sans-serif;
+ 	background-color: #E5E8EA;
+ }
+ header {
+	text-align: center;
+	color:black;
+}
+.title {
+	text-align: center;
+}
+
+.chat {
+	margin: 20px;
+}
+
+.chat-style {
+	background-color: white;
+	max-width: 250px;
+	padding: 8px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.chat-user {
+	margin-left: 200px;
+}
+
+#input-box {
+	border-style: none;
+	width: 200px;
+	min-height: 50px;
+	text-align: top;
+}

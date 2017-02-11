@@ -1,5 +1,14 @@
- <p><%= @entry.updated_at %></p>
 
- <p><%= Question.find_by_id(@entry.question_id).text %></p>
- <p><%= @entry.text %></p>
-
+<%# content_for :header, @article.title %>
+<header class="show-entry-page-title">Entry Title</header>
+<img class="show-entry-image" src="" alt="Entry photo">
+<div class="show-entry-title-container">
+  <h1 class="show-entry-title">Entry 1</h1>
+   <p><%= @entry.updated_at %></p>
+  <p> <%= Question.find_by_id(@entry.question_id).text %></p>
+  <h3 class="show-entry-prompt"><%= @entry.text %></h3>
+  <img class="edit-icon">
+  <img class="share-icon">
+</div>
+<hr>
+<div class="entry-content-text">Lorem ipsum</div>
