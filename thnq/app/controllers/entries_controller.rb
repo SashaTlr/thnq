@@ -4,8 +4,8 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new(params)
-
+    @journal = Journal.find_by_id(params[:journal_id])
+    @entry = Entry.new(params.require(:entry).permit(:text))
     if @entry.save
       redirect_to @entry
     else
@@ -16,6 +16,7 @@ class EntriesController < ApplicationController
   def new
     @random_question = Question.all.sample
     @entry = Entry.new(:question_id => @random_question.id, :journal_id => params[:journal_id])
+    @journal = Journal.find_by_id(@entry.journal_id)
   end
 
   def edit

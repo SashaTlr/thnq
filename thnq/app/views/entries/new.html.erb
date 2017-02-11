@@ -1,11 +1,47 @@
-<h1> <%= @random_question.text %> </h1>
+<%# <% content_for :header, @entries.id %>
 
-<%= form_for :entry, html: {class: "your form class"} do |f| %>
-  <p>
-    <%= f.text_field :text %>
-  </p>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+</head>
+<header>Header</header>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="body">
+    <div class="title">
+        <h1>Entries #[1]</h1>
+        <button>Add Image</button>
+        <button>Submit</button>
+    </div>
+
+    <div class="chat">
+
+        <div class="chat-style chat-bot">
+            Hello, [username], welcome to thnq! Let's enter your first journal entry.
+        </div>
+        <div class="chat-style chat-bot">
+            <%= @random_question.text %>
+        </div>
+        <div class="chat-style chat-user">
+            <div class="form">
+<%= form_for [@journal, @entry] do |f| %>
+                      <p>
+                            <%= hidden_field_tag "entry[question_id]", @random_question.id %>
+    <%= f.text_field :text , class:'input-box'%>
+                      </p>
+
+                      <p>
+                        <%= f.submit %>
+                      </p>
+                  <% end %>
+
+<!--                 <form>
+                    <textarea class="input-box" placeholder="Click to start writing"></textarea>
+                    <input type="submit" value="Submit">
+                </form> -->
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<script type="text/javascript" ></script>
+<!-- src='../../assets/javascripts/myscripts.js' -->
