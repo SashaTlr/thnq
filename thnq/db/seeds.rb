@@ -28,3 +28,9 @@ entry = Entry.create(
   question_id: 2,
   text: "Cat is the best"
   )
+
+entry = Entry.create(
+  journal_id: journal_one.id,
+  question_id: 3,
+  text: "I love taking naps with Cat."
+  )
