@@ -17,3 +17,8 @@
 header {
 	background-color: #E5E8EA;
 }
+
+.logo {
+  text-align: center;
+  margin: 0 auto;
+}
