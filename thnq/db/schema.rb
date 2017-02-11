@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20170211183953) do
     t.string   "rel_to_user"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.         "image"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
