@@ -10,18 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211183953) do
+ActiveRecord::Schema.define(version: 20170211163132) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "journal_id"
     t.integer  "question_id"
     t.string   "text"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["journal_id"], name: "index_entries_on_journal_id"
     t.index ["question_id"], name: "index_entries_on_question_id"
   end
@@ -30,12 +26,8 @@ ActiveRecord::Schema.define(version: 20170211183953) do
     t.string   "subject_name"
     t.integer  "user_id"
     t.string   "rel_to_user"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["user_id"], name: "index_journals_on_user_id"
   end
 
@@ -47,12 +39,8 @@ ActiveRecord::Schema.define(version: 20170211183953) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

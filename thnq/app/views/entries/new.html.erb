@@ -18,14 +18,24 @@
 			Hello, [username], welcome to thnq! Let's enter your first journal entry.
 		</div>
 		<div class="chat-style chat-bot">	
-			What do you appreciate about [subject]?
+			<%= @random_question.text %> 
 		</div>
 		<div class="chat-style chat-user">
 			<div class="form">
-				<form>
-					<textarea id="input-box" placeholder="Click to start writing"></textarea>
+				<%= form_for :entry do |f| %>
+  					<p>
+    					<%= f.text_field :text, class:'input-box' %>
+  					</p>
+
+  					<p>
+    					<%= f.submit %>
+  					</p>
+  				<% end %>
+
+<!-- 				<form>
+					<textarea class="input-box" placeholder="Click to start writing"></textarea>
 					<input type="submit" value="Submit">
-				</form>
+				</form> -->
 			</div>
 		</div>
 		
@@ -34,3 +44,4 @@
 </div>
 <script type="text/javascript" ></script>
 <!-- src='../../assets/javascripts/myscripts.js' -->
+
